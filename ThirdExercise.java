@@ -28,7 +28,7 @@ public class ThirdExercise {
         System.out.println("· Write your third side");
         double side3 = Double.parseDouble(input.nextLine());
         double areaTriangle = trianglePerimeterArea(side1, side2, side3);
-        System.out.println("Result: " + areaTriangle);
+        System.out.println(areaTriangle == 0 ? "This is not a triangle" : "Result: " + areaTriangle);
         System.out.println("-------------------------------------------");
         input.close();
     }
@@ -43,10 +43,13 @@ public class ThirdExercise {
         }
     }
     public static double trianglePerimeterArea(double side1, double side2, double side3){
-        double perimeter = side1 + side2 + side3;
-        double halfPerimeter = perimeter/2;
-        System.out.println("Perimeter: " + perimeter);
-        return Math.sqrt((halfPerimeter * (halfPerimeter - side1) * (halfPerimeter - side2) * (halfPerimeter - side3)));
-
+        if((side1 + side2)> side3 && (side1 + side3)> side2 && (side2 + side3)> side1) {
+            double perimeter = side1 + side2 + side3;
+            double halfPerimeter = perimeter / 2;
+            System.out.println("Perimeter: " + perimeter);
+            return Math.sqrt((halfPerimeter * (halfPerimeter - side1) * (halfPerimeter - side2) * (halfPerimeter - side3)));
+        } else {
+            return 0;
+        }
     }
 }
