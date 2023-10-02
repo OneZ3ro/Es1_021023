@@ -29,8 +29,8 @@ public class ThirdExercise {
         double side3 = Double.parseDouble(input.nextLine());
         double areaTriangle = trianglePerimeterArea(side1, side2, side3);
         System.out.println("Result: " + areaTriangle);
+        System.out.println("-------------------------------------------");
         input.close();
-
     }
     public static double rectanglePerimeter(double width, double height){
         return width * height;
